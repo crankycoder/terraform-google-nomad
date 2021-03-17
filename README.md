@@ -122,6 +122,12 @@ $ ...
 
 ## Use `ssh-mtls-terminating-proxy` to access the Nomad UI
 
+You must have your ssh-agent setup.  Usually this means running:
+
+```console
+$ eval $(ssh-agent)
+```
+
 When using the SSH bastion, you can use the `ssh-mtls-terminating-proxy.go` helper script to tunnel a connection from localhost to the Nomad server API:
 
 ```console
