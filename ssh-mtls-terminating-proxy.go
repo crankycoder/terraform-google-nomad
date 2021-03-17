@@ -229,8 +229,8 @@ func main() {
 
 		tlsClientConfig.BuildNameToCertificate()
 
-		log.Println("Starting Nomad local listener on localhost:4646")
-		ln, err := net.Listen("tcp", "localhost:4646")
+		log.Println("Starting Nomad local listener on 0.0.0.0:4646")
+		ln, err := net.Listen("tcp", "0.0.0.0:4646")
 		if err != nil {
 			errorAndExit(err)
 		}
@@ -295,8 +295,8 @@ func main() {
 
 		tlsClientConfig.BuildNameToCertificate()
 
-		log.Println("Starting Consul local listener on localhost:8500")
-		ln, err := net.Listen("tcp", "localhost:8500")
+		log.Println("Starting Consul local listener on 0.0.0.0:8500")
+		ln, err := net.Listen("tcp", "0.0.0.0:8500")
 		if err != nil {
 			errorAndExit(err)
 		}
