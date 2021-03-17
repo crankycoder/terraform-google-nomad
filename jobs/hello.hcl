@@ -1,7 +1,7 @@
-job "cranky-demo" {
+job "hello-job" {
   datacenters = ["dc1"]
 
-  group "example" {
+  group "hello-group" {
     network {
       port "http" {
         static = "5678"
@@ -19,6 +19,20 @@ job "cranky-demo" {
           "-text",
           "hello world",
         ]
+      }
+
+
+      service {
+            name     = "hello-service"
+            port     = "http"
+            tags     = ["urlprefix-/hello"]
+
+        check {
+            type     = "http"
+            path     = "/health"
+            interval = "2s"
+            timeout  = "2s"
+        }
       }
     }
   }
